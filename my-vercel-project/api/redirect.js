@@ -1,9 +1,10 @@
-module.exports = (req, res) => {
+// pages/api/redirect.js
+export default (req, res) => {
   const number = req.query.n;
   const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
   const datetime = new Date().toISOString();
 
-  // For now, we'll just log the details. In a real-world scenario, you might want to store this in a database or some other persistent storage.
+  // Log the details
   console.log(`${number};${ip};${datetime}`);
 
   // Redirect the user
