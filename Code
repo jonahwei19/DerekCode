@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="refresh" content="0;url=https://jobs.lever.co/workithealth/f769f49b-7d5b-42f5-93cb-03837ac0b5c1" />
+</head>
+<body>
+
+
+    <?php
+       $number = $_GET['n'];
+       $ip = $_SERVER['REMOTE_ADDR'];
+       $datetime = date("Y-m-d H:i:s");
+        $myfile = fopen("visits.txt", "a") or die("Unable to open file!");
+        fwrite($myfile, "$number;$ip;$datetime\n");
+        fclose($myfile);
+        header("Location: http://www.workithealth.com",TRUE,303);
+        
+    ?>
+
+
+</body>
+</html>
